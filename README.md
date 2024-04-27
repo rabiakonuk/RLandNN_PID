@@ -1,39 +1,24 @@
----
+# Hybrid Neural Network and Reinforcement Learning Approach for PID Controller Tuning
 
- # **A simple PID implementation in MATLAB/Simulink**
+This repository is part of a research initiative that focuses on augmenting the traditional Proportional-Integral-Derivative (PID) controller tuning process with advanced machine learning techniques. It specifically explores the potential of combining Neural Networks (NNs) with Reinforcement Learning (RL) to optimize PID controllers under conditions that are dynamic and unpredictable - a scenario where classical tuning methodologies might not suffice.
 
----
+## System Modeling and Design
 
-It's a linearized Engine Idle Speed Model which is controlled by a PID Controller.
+The core of this project is a model that simulates an engine idle speed control system, which has been traditionally challenging due to its nonlinear characteristics and sensitivity to operational conditions. By adopting a black-box approach, the model allows the integration of AI-driven methods with conventional control mechanisms in a MATLAB/Simulink environment. This setup provides a fertile testing ground for our hybrid NN and RL-based tuning strategy.
 
-In Sec.1 you can enter the nominal engine speed.
+### Reference PID Implementation
 
-In Sec.2 there are some parameters of a six-cylinder-engine idle speed from an investigation, you are able to change whatever you want! look at [Cook, J. A., and Powell, B. K. Modelling of an internal combustion engine for control analysis. IEEE Control Systems Magazine,,8(4), 1988, 20-26.].
+As a comparative benchmark, we employ MATLAB's PID Autotuner, a tool that automatically adjusts PID parameters by observing the system's response. This helps to set a performance baseline against which the AI-enhanced controllers' effectiveness can be measured. For more information on the MATLAB PID Autotuner, please refer to the official [MathWorks documentation](https://www.mathworks.com/help/control/ug/pid-controller-tuning-in-simulink.html).
 
-In Sec.3 the state space and transfer function are calculated. look at [Paulinus C. Eze. “Design of a Robust PID Controller for Improved Transient Response Performance of a Linearized Engine Idle Speed Model.” American Journal of Engineering Research (AJER), vol. 6, no. 8, 2017, pp. 305–313.].
+## Background and Motivation
 
-In Sec.4 a PID controller is designed.
+PID controllers are ubiquitous in control systems engineering, yet their tuning can be intricate, especially when dealing with systems where the operating conditions are in constant flux. The synergy between NNs and RL presents an opportunity to develop a control system that not only self-optimizes in real time but also learns and adapts from the system's performance history.
 
-In Sec.5 it is implemented in a closed-loop system
+This repository takes inspiration from and builds upon an existing model for PID engine idle speed control, which can be found at the following repository:
+[PID_EngineIdle_Speed by Mr. Maleki](https://github.com/mrmaleki1376/PID_EngineIdle_Speed/tree/main).
 
-In Sec.6 Simulation!
+We extend this foundational work by incorporating a neural network to predict optimal PID settings and an RL algorithm that fine-tunes these parameters adaptively, catering to the intricate demands of modern control systems.
 
-In Sec.7 Figure!
+## Research Objective
 
-<div align="center">
- <img src = 'Images/Code.jpg'>
-
-Fig.1 – Results of .m file
-</div> 
-
-<div align="center">
- <img src = 'Images/Model.JPG'>
-
-Fig.2 – Simulink Model
-</div> 
-
-<div align="center">
- <img src = 'Images/Simulink.jpg'>
-
-Fig.3 – Results of Simulation wit Simulink
-</div> 
+The ambition driving this research is to construct a PID tuning system that exemplifies both robustness and adaptability, making it well-suited to the complexities of contemporary and future control system applications. By sharing our progress and methodology through this repository, we invite the academic and professional communities to explore the viability and effectiveness of AI in enhancing PID controller tuning.
